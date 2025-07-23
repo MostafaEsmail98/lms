@@ -46,6 +46,7 @@ dependencies:
   go_router: ^14.6.1
   firebase_auth: ^5.7.0
   dartz: ^0.10.1
+  youtube_player_flutter: ^9.1.1
 
 dev_dependencies:
   flutter_test:

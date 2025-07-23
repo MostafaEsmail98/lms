@@ -31,7 +31,6 @@ class HomeDataSources {
           final courses = snapshot.docs
               .map(
                 (doc) => CourseModel.fromDoc(
-                  doc.id,
                   doc.data() as Map<String, dynamic>,
                 ),
               )

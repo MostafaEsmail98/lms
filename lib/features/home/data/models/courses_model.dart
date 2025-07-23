@@ -17,9 +17,9 @@ class CourseModel {
     required this.lessons,
   });
 
-  factory CourseModel.fromDoc(String id, Map<String, dynamic> map) {
+  factory CourseModel.fromDoc( Map<String, dynamic> map) {
     return CourseModel(
-      id: id,
+      id: map['courseId'] ?? '',
       title: map['title'] ?? '',
       description: map['description'] ?? '',
       image: map['image'] ?? '',
@@ -37,6 +37,7 @@ class CourseModel {
       'image': image,
       'createdAt': Timestamp.fromDate(createdAt),
       'lessons': lessons.map((e) => e.toMap()).toList(),
+      "courseId": id,
     };
   }
 }

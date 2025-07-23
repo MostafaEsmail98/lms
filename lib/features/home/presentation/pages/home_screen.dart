@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:lms/core/routing/app_router.dart';
 import 'package:lms/core/theming/strings.dart';
 import 'package:lms/core/theming/styles.dart';
 import 'package:lms/features/home/presentation/manager/home_cubit.dart';
@@ -107,7 +109,10 @@ class HomeScreen extends StatelessWidget {
                                 final course = state.courses[index];
                                 return InkWell(
                                   onTap: () {
-
+                                    context.push(
+                                      AppRoutes.courseDetails,
+                                      extra: course,
+                                    );
                                   },
                                   child: CourseCard(
                                     image: course.image,

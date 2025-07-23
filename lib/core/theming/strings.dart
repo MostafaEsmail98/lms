@@ -9,5 +9,7 @@ class AppStrings {
   static const String welcomeBack2 = 'Welcome Back!';
   static const String dontHaveAnAccount = "Don't have an account? Sign up";
   static const String haveAnAccount = "Have an account? Sign In";
+  static const String courseDetails =  'Course Details';
+  static const String lessons =  'Lessons';
 
 }
