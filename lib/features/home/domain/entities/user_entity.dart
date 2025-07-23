@@ -1,15 +1,26 @@
 class UserEntity {
   final String uid;
   final String email;
+  final String? name;
   final List<LessonModel>? lessons;
 
-  const UserEntity({
-    required this.uid,
-    required this.email,
-    required this.lessons,
-  });
-}
+  UserEntity({required this.uid, required this.email, this.name,required this.lessons, });
 
+  toJson() {
+    return {'uid': uid, 'email': email, 'name': name , 'lessons': lessons?.map((e) => e.toMap()).toList()};
+  }
+
+  factory UserEntity.fromJson(Map<String, dynamic> json) {
+    return UserEntity(
+      uid: json['uid'] as String,
+      email: json['email'] as String,
+      name: json['name'] as String?,
+      lessons: (json['lessons'] as List<dynamic>?)
+          ?.map((e) => LessonModel.fromMap(e as Map<String, dynamic>))
+          .toList() ?? [],
+    );
+  }
+}
 class LessonModel {
   final String lessonId;
   final String title;

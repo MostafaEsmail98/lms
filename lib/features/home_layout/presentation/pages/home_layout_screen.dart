@@ -45,12 +45,6 @@ class _HomeLayoutScreenState extends State<HomeLayoutScreen> {
             icon: const Icon(Icons.live_tv, size: 30),
             title: Text(AppStrings.courses),
           ),
-          FlashyTabBarItem(
-            activeColor: Colors.black,
-            inactiveColor: Colors.grey,
-            icon: const Icon(Icons.person, size: 30),
-            title: Text(AppStrings.profile),
-          ),
         ],
       ),
     );

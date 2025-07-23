@@ -18,9 +18,10 @@ class FirebaseAuthDataSource {
               'email': value.user!.email,
               'uid': value.user!.uid,
               'name': name,
+              'lessons': [],
             });
           });
-      return Right(UserEntity(uid: result.user!.uid, email: result.user!.email!));
+      return Right(UserEntity(uid: result.user!.uid, email: result.user!.email!, lessons: []));
     } on Exception catch (e) {
       return Left(ServerFailure(e.toString()));
     }
@@ -32,7 +33,7 @@ class FirebaseAuthDataSource {
         email: email,
         password: password,
       );
-      return Right(UserEntity(uid: result.user!.uid, email: result.user!.email!));
+      return Right(UserEntity(uid: result.user!.uid, email: result.user!.email!, lessons: []));
     } on Exception catch (e) {
       return Left(ServerFailure(e.toString()));
     }

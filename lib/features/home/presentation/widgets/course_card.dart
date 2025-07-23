@@ -16,7 +16,7 @@ class CourseCard extends StatelessWidget {
           height: 120,
           padding: EdgeInsets.all(16),
           decoration: BoxDecoration(
-            image: DecorationImage(image: AssetImage(image), fit: BoxFit.fill),
+            image: DecorationImage(image: NetworkImage(image), fit: BoxFit.fill),
             borderRadius: BorderRadius.circular(12),
           ),
         ),

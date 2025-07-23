@@ -5,10 +5,12 @@ import 'package:lms/features/auth/presentation/pages/sign_up/sign_up.dart';
 import 'package:lms/features/home_layout/presentation/manager/home_layout_cubit.dart';
 import 'package:lms/features/home_layout/presentation/pages/home_layout_screen.dart';
 
+import '../../features/splash/splash_screen.dart';
 
 class AppRoutes {
   static const String homeLayout = '/homeLayout';
-  static const String signIn = '/';
+  static const String signIn = '/signIn';
+  static const String splashScreen = '/';
   static const String signUp = '/signUp';
 
   static final router = GoRouter(
@@ -32,6 +34,12 @@ class AppRoutes {
         path: signUp,
         builder: (context, state) {
           return SignUp();
+        },
+      ),
+      GoRoute(
+        path: splashScreen,
+        builder: (context, state) {
+          return SplashScreen();
         },
       ),
     ],
