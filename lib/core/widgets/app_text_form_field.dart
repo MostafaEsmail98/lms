@@ -17,6 +17,7 @@ class AppTextFormField extends StatelessWidget {
   final TextEditingController? controller;
   final Function(String?) validator;
   final int? maxLines;
+  final FocusNode? focusNode;
 
   const AppTextFormField({
     super.key,
@@ -33,11 +34,13 @@ class AppTextFormField extends StatelessWidget {
     required this.validator,
     this.prefixIcon,
     this.maxLines,
+    this.focusNode,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      focusNode: focusNode,
       controller: controller,
       maxLines: maxLines ?? 1,
       decoration: InputDecoration(
